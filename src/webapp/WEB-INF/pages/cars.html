@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Cars</title>
+  <style>
+    h2 {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 20px;
+      color: #039;
+    }
+    table {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      background: white;
+      max-width: 70%;
+      width: 70%;
+      border-collapse: collapse;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    th {
+      font-weight: normal;
+      color: #039;
+      border-bottom: 2px solid #6678b1;
+      padding: 10px 8px;
+    }
+    td {
+      color: #669;
+      padding: 9px 8px;
+      transition: .3s linear;
+    }
+    tr:hover td {
+      color: #6699ff;
+    }
+  </style>
+</head>
+<body>
+<h2 style="text-align: center">Car catalogue</h2>
+<br>
+<table  >
+  <thead>
+  <tr>
+    <th>Model</th>
+    <th>Series</th>
+    <th>Color</th>
+  </tr>
+  </thead>
+  <tbody>
+    <th:block th:each="car : ${cars}">
+      <tr>
+        <td><span th:text="${car.getModel()}">Model</span></td>
+        <td><span th:text="${car.getSeries()}">Series</span></td>
+        <td><span th:text="${car.getColor()}">Color</span></td>
+      </tr>
+
+    </th:block>
+  </tbody>
+</table>
+</body>
+</html>
