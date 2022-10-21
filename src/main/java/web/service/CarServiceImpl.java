@@ -11,7 +11,7 @@ import java.util.List;
 public  class CarServiceImpl implements CarService {
 
 
-    private  CarDao carDao;
+    private final CarDao carDao;
     @Autowired
     public CarServiceImpl(CarDao carDao) {
         this.carDao = carDao;
